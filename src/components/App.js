@@ -6,7 +6,6 @@ function App() {
   return (
     <div className="App">
       <Router>
-
       </Router>
       Nice servers and happy admins.
     </div>
