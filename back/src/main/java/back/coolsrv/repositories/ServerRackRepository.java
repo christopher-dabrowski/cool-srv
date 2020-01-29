@@ -2,8 +2,8 @@ package back.coolsrv.repositories;
 
 import back.coolsrv.enities.ServerRack;
 import org.springframework.data.repository.CrudRepository;
-import org.springframework.stereotype.Repository;
+import org.springframework.data.rest.core.annotation.RepositoryRestResource;
 
-@Repository
-public interface ServerRackRepository extends CrudRepository<ServerRack, String> {
+@RepositoryRestResource(collectionResourceRel = "serverrack", path = "serverrack")
+public interface ServerRackRepository extends CrudRepository<ServerRack, Long> {
 }

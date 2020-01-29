@@ -2,8 +2,8 @@ package back.coolsrv.repositories;
 
 import back.coolsrv.enities.Vlan;
 import org.springframework.data.repository.CrudRepository;
-import org.springframework.stereotype.Repository;
+import org.springframework.data.rest.core.annotation.RepositoryRestResource;
 
-@Repository
-public interface VlanRepository extends CrudRepository<Vlan, String> {
+@RepositoryRestResource(collectionResourceRel = "vlan", path = "vlan")
+public interface VlanRepository extends CrudRepository<Vlan, Long> {
 }

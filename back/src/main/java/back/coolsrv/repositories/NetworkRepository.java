@@ -2,8 +2,8 @@ package back.coolsrv.repositories;
 
 import back.coolsrv.enities.Network;
 import org.springframework.data.repository.CrudRepository;
-import org.springframework.stereotype.Repository;
+import org.springframework.data.rest.core.annotation.RepositoryRestResource;
 
-@Repository
-public interface NetworkRepository extends CrudRepository<Network, String> {
+@RepositoryRestResource(collectionResourceRel = "network", path = "network")
+public interface NetworkRepository extends CrudRepository<Network, Long> {
 }

@@ -2,8 +2,8 @@ package back.coolsrv.repositories;
 
 import back.coolsrv.enities.Device;
 import org.springframework.data.repository.CrudRepository;
-import org.springframework.stereotype.Repository;
+import org.springframework.data.rest.core.annotation.RepositoryRestResource;
 
-@Repository
-public interface DeviceRepository extends CrudRepository<Device, String> {
+@RepositoryRestResource(collectionResourceRel = "device", path = "device")
+public interface DeviceRepository extends CrudRepository<Device, Long> {
 }

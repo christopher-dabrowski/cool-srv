@@ -2,8 +2,8 @@ package back.coolsrv.repositories;
 
 import back.coolsrv.enities.NAT;
 import org.springframework.data.repository.CrudRepository;
-import org.springframework.stereotype.Repository;
+import org.springframework.data.rest.core.annotation.RepositoryRestResource;
 
-@Repository
-public interface NATRepository extends CrudRepository<NAT, String> {
+@RepositoryRestResource(collectionResourceRel = "nat", path = "nat")
+public interface NATRepository extends CrudRepository<NAT, Long> {
 }
