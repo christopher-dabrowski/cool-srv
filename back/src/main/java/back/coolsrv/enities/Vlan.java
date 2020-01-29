@@ -16,6 +16,10 @@ public class Vlan {
     @GeneratedValue(strategy = GenerationType.AUTO)
     private long id;
 
+    private String name;
+
     @OneToMany
     private List<Device> deviceList;
+
+    private String desc;
 }

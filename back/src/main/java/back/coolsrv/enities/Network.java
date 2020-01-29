@@ -17,4 +17,20 @@ public class Network {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private long id;
+
+    private String address;
+
+    private String mask;
+
+    private String desc;
+
+    private String dns;
+
+    private String location;
+
+    private boolean routable;
+
+    private boolean publicNet;
+
+    private boolean dynamic;
 }

@@ -23,7 +23,7 @@ public class Device {
 
     private String MAC;
 
-    private boolean isGateway;
+    private boolean gateway;
 
     private String location;
 
