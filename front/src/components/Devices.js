@@ -1,6 +1,6 @@
 import React from "react";
 import PropTypes from "prop-types";
-import {Button, Modal, Form} from 'react-bootstrap'
+import { Button, Modal, Form } from "reactstrap";
 
 const Devices = ({ className }) => {
   const [show, setShow] = React.useState(false);
@@ -28,31 +28,31 @@ const Devices = ({ className }) => {
         <Modal.Body>
           <Form>
             <Form.Group controlId="ipAddress">
-            <Form.Label>Adres IP</Form.Label>
+              <Form.Label>Adres IP</Form.Label>
               <Form.Control type="text" placeholder="Podaj adres IP" />
             </Form.Group>
             <Form.Group controlId="hostname">
-            <Form.Label>Nazwa hosta</Form.Label>
+              <Form.Label>Nazwa hosta</Form.Label>
               <Form.Control type="text" placeholder="Podaj nazwę hosta" />
             </Form.Group>
             <Form.Group controlId="desc">
-            <Form.Label>Opis</Form.Label>
+              <Form.Label>Opis</Form.Label>
               <Form.Control type="text" placeholder="Podaj opis" />
             </Form.Group>
             <Form.Group controlId="mac">
-            <Form.Label>Adres MAC</Form.Label>
+              <Form.Label>Adres MAC</Form.Label>
               <Form.Control type="text" placeholder="Podaj adres MAC" />
             </Form.Group>
             <Form.Group controlId="gateway">
-            <Form.Label>Gateway?</Form.Label>
+              <Form.Label>Gateway?</Form.Label>
               <Form.Control type="text" placeholder="Gateway?" />
             </Form.Group>
             <Form.Group controlId="location">
-            <Form.Label>Lokalizacja fizyczna</Form.Label>
+              <Form.Label>Lokalizacja fizyczna</Form.Label>
               <Form.Control type="text" placeholder="Podaj lokalizację fizyczną" />
             </Form.Group>
             <Form.Group controlId="vlan">
-            <Form.Label>Podłączony Vlan</Form.Label>
+              <Form.Label>Podłączony Vlan</Form.Label>
               <Form.Control type="text" placeholder="Wybierz VLAN" />
             </Form.Group>
           </Form>

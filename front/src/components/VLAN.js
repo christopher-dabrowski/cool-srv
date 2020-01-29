@@ -1,6 +1,6 @@
 import React from "react";
 import PropTypes from "prop-types";
-import {Button, Modal, Form} from 'react-bootstrap'
+import { Button, Modal, Form } from 'reactstrap';
 
 const VLAN = ({ className }) => {
   const [show, setShow] = React.useState(false);
@@ -28,15 +28,15 @@ const VLAN = ({ className }) => {
         <Modal.Body>
           <Form>
             <Form.Group controlId="name">
-            <Form.Label>Nazwa</Form.Label>
+              <Form.Label>Nazwa</Form.Label>
               <Form.Control type="text" placeholder="Podaj adres IP" />
             </Form.Group>
             <Form.Group controlId="deviceList">
-            <Form.Label>Urządzenia</Form.Label>
+              <Form.Label>Urządzenia</Form.Label>
               <Form.Control type="text" placeholder="Wybierz urządzenia" />
             </Form.Group>
             <Form.Group controlId="desc">
-            <Form.Label>Opis</Form.Label>
+              <Form.Label>Opis</Form.Label>
               <Form.Control type="text" placeholder="Podaj opis" />
             </Form.Group>
           </Form>

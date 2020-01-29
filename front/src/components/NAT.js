@@ -1,6 +1,6 @@
 import React from "react";
 import PropTypes from "prop-types";
-import {Button, Modal, Form} from 'react-bootstrap'
+import { Button, Modal, Form } from "reactstrap";
 
 const NAT = ({ className }) => {
   const [show, setShow] = React.useState(false);
@@ -28,23 +28,23 @@ const NAT = ({ className }) => {
         <Modal.Body>
           <Form>
             <Form.Group controlId="name">
-            <Form.Label>Nazwa</Form.Label>
+              <Form.Label>Nazwa</Form.Label>
               <Form.Control type="text" placeholder="Podaj adres IP" />
             </Form.Group>
             <Form.Group controlId="device">
-            <Form.Label>Urządzenie</Form.Label>
+              <Form.Label>Urządzenie</Form.Label>
               <Form.Control type="text" placeholder="Wybierz urządzenie" />
             </Form.Group>
             <Form.Group controlId="desc">
-            <Form.Label>Opis</Form.Label>
+              <Form.Label>Opis</Form.Label>
               <Form.Control type="text" placeholder="Podaj opis" />
             </Form.Group>
             <Form.Group controlId="external">
-            <Form.Label>Adres zewnętrzny</Form.Label>
+              <Form.Label>Adres zewnętrzny</Form.Label>
               <Form.Control type="text" placeholder="Podaj adres zewnętrzny" />
             </Form.Group>
             <Form.Group controlId="network">
-            <Form.Label>Sieć</Form.Label>
+              <Form.Label>Sieć</Form.Label>
               <Form.Control type="text" placeholder="Wybierz sieć" />
             </Form.Group>
           </Form>
