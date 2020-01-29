@@ -1,4 +1,9 @@
 package back.coolsrv.repositories;
 
-public interface NATRepository {
+import back.coolsrv.enities.NAT;
+import org.springframework.data.repository.CrudRepository;
+import org.springframework.stereotype.Repository;
+
+@Repository
+public interface NATRepository extends CrudRepository<NAT, String> {
 }
