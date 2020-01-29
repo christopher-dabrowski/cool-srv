@@ -2,7 +2,7 @@ import React from "react";
 import PropTypes from "prop-types";
 import {Button, Modal, Form} from 'react-bootstrap'
 
-const Networks = ({ className }) => {
+const Devices = ({ className }) => {
   const [show, setShow] = React.useState(false);
 
   const handleClose = () => setShow(false);
@@ -12,10 +12,10 @@ const Networks = ({ className }) => {
       <h2 className="text-center">Networks</h2>
       <ul>
         <li>
-          Sieć 1
+          Urządzenie 1
         </li>
         <li>
-          Network 2
+          Device 2
         </li>
       </ul>
       <Button variant="primary" onClick={handleShow}>
@@ -23,7 +23,7 @@ const Networks = ({ className }) => {
       </Button>
       <Modal show={show} onHide={handleClose}>
         <Modal.Header closeButton>
-          <Modal.Title>Dodaj sieć</Modal.Title>
+          <Modal.Title>Dodaj urządzenie</Modal.Title>
         </Modal.Header>
         <Modal.Body>
           <Form>
@@ -31,32 +31,28 @@ const Networks = ({ className }) => {
             <Form.Label>Adres IP</Form.Label>
               <Form.Control type="text" placeholder="Podaj adres IP" />
             </Form.Group>
-            <Form.Group controlId="mask">
-            <Form.Label>Maska podsieci</Form.Label>
+            <Form.Group controlId="hostname">
+            <Form.Label>Nazwa hosta</Form.Label>
               <Form.Control type="text" placeholder="Podaj adres IP" />
             </Form.Group>
             <Form.Group controlId="desc">
             <Form.Label>Opis</Form.Label>
               <Form.Control type="text" placeholder="Podaj adres IP" />
             </Form.Group>
-            <Form.Group controlId="dnsAddress">
-            <Form.Label>Adres DNS</Form.Label>
+            <Form.Group controlId="mac">
+            <Form.Label>Adres MAC</Form.Label>
+              <Form.Control type="text" placeholder="Podaj adres IP" />
+            </Form.Group>
+            <Form.Group controlId="gateway">
+            <Form.Label>Gateway?</Form.Label>
               <Form.Control type="text" placeholder="Podaj adres IP" />
             </Form.Group>
             <Form.Group controlId="location">
             <Form.Label>Lokalizacja fizyczna</Form.Label>
               <Form.Control type="text" placeholder="Podaj adres IP" />
             </Form.Group>
-            <Form.Group controlId="routable">
-            <Form.Label>Rutowalne?</Form.Label>
-              <Form.Control type="text" placeholder="Podaj adres IP" />
-            </Form.Group>
-            <Form.Group controlId="public">
-            <Form.Label>Publiczne?</Form.Label>
-              <Form.Control type="text" placeholder="Podaj adres IP" />
-            </Form.Group>
-            <Form.Group controlId="dynamic">
-            <Form.Label>Adres dynamiczny?</Form.Label>
+            <Form.Group controlId="vlan">
+            <Form.Label>Podłączony Vlan</Form.Label>
               <Form.Control type="text" placeholder="Podaj adres IP" />
             </Form.Group>
           </Form>
@@ -75,8 +71,8 @@ const Networks = ({ className }) => {
 
 };
 
-Networks.propTypes = {
+Devices.propTypes = {
   className: PropTypes.string
 };
 
-export default Networks;
+export default Devices;

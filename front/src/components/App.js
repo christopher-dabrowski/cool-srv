@@ -4,6 +4,7 @@ import { BrowserRouter as Router, Switch, Route, Redirect } from "react-router-d
 import Header from "./Layout/Header";
 import NavigationDrawer from "./Layout/NavigationDrawer";
 import Networks from "./Networks";
+import Devices from "./Devices";
 
 function App() {
   return (
@@ -18,8 +19,11 @@ function App() {
             <Route exact path="/">
               <Redirect to="/networks" />
             </Route>
-            <Route path="/networks">
+            <Route exact path="/networks">
               <Networks className="flex-grow-1" />
+            </Route>
+            <Route exact path="/devices">
+              <Devices className="flex-grow-1" />
             </Route>
           </Switch>
         </main>
