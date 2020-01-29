@@ -2,7 +2,7 @@ import React from "react";
 import PropTypes from "prop-types";
 import {Button, Modal, Form} from 'react-bootstrap'
 
-const Devices = ({ className }) => {
+const VLAN = ({ className }) => {
   const [show, setShow] = React.useState(false);
 
   const handleClose = () => setShow(false);
@@ -12,10 +12,10 @@ const Devices = ({ className }) => {
       <h2 className="text-center">Networks</h2>
       <ul>
         <li>
-          Urządzenie 1
+          VLAN 1
         </li>
         <li>
-          Device 2
+          VLAN 2
         </li>
       </ul>
       <Button variant="primary" onClick={handleShow}>
@@ -23,37 +23,21 @@ const Devices = ({ className }) => {
       </Button>
       <Modal show={show} onHide={handleClose}>
         <Modal.Header closeButton>
-          <Modal.Title>Dodaj urządzenie</Modal.Title>
+          <Modal.Title>Dodaj sieć VLAN</Modal.Title>
         </Modal.Header>
         <Modal.Body>
           <Form>
-            <Form.Group controlId="ipAddress">
-            <Form.Label>Adres IP</Form.Label>
+            <Form.Group controlId="name">
+            <Form.Label>Nazwa</Form.Label>
               <Form.Control type="text" placeholder="Podaj adres IP" />
             </Form.Group>
-            <Form.Group controlId="hostname">
-            <Form.Label>Nazwa hosta</Form.Label>
-              <Form.Control type="text" placeholder="Podaj nazwę hosta" />
+            <Form.Group controlId="deviceList">
+            <Form.Label>Urządzenia</Form.Label>
+              <Form.Control type="text" placeholder="Wybierz urządzenia" />
             </Form.Group>
             <Form.Group controlId="desc">
             <Form.Label>Opis</Form.Label>
               <Form.Control type="text" placeholder="Podaj opis" />
-            </Form.Group>
-            <Form.Group controlId="mac">
-            <Form.Label>Adres MAC</Form.Label>
-              <Form.Control type="text" placeholder="Podaj adres MAC" />
-            </Form.Group>
-            <Form.Group controlId="gateway">
-            <Form.Label>Gateway?</Form.Label>
-              <Form.Control type="text" placeholder="Gateway?" />
-            </Form.Group>
-            <Form.Group controlId="location">
-            <Form.Label>Lokalizacja fizyczna</Form.Label>
-              <Form.Control type="text" placeholder="Podaj lokalizację fizyczną" />
-            </Form.Group>
-            <Form.Group controlId="vlan">
-            <Form.Label>Podłączony Vlan</Form.Label>
-              <Form.Control type="text" placeholder="Wybierz VLAN" />
             </Form.Group>
           </Form>
         </Modal.Body>
@@ -71,8 +55,8 @@ const Devices = ({ className }) => {
 
 };
 
-Devices.propTypes = {
+VLAN.propTypes = {
   className: PropTypes.string
 };
 
-export default Devices;
+export default VLAN;

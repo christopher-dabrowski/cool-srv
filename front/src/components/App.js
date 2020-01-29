@@ -5,6 +5,8 @@ import Header from "./Layout/Header";
 import NavigationDrawer from "./Layout/NavigationDrawer";
 import Networks from "./Networks";
 import Devices from "./Devices";
+import NAT from "./NAT";
+import VLAN from "./VLAN";
 
 function App() {
   return (
@@ -19,11 +21,17 @@ function App() {
             <Route exact path="/">
               <Redirect to="/networks" />
             </Route>
-            <Route exact path="/networks">
+            <Route path="/networks">
               <Networks className="flex-grow-1" />
             </Route>
-            <Route exact path="/devices">
+            <Route path="/devices">
               <Devices className="flex-grow-1" />
+            </Route>
+            <Route path="/nat">
+              <NAT className="flex-grow-1" />
+            </Route>
+            <Route path="/vlan">
+              <VLAN className="flex-grow-1" />
             </Route>
           </Switch>
         </main>
