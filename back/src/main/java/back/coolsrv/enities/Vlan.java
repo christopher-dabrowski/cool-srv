@@ -22,4 +22,10 @@ public class Vlan {
     private List<Device> deviceList;
 
     private String desc;
+
+    public Vlan(String name, List<Device> deviceList, String desc) {
+        this.name = name;
+        this.deviceList = deviceList;
+        this.desc = desc;
+    }
 }

@@ -26,4 +26,12 @@ public class NAT {
 
     @OneToOne
     private Network network;
+
+    public NAT(String name, Device device, String desc, String externalIp, Network network) {
+        this.name = name;
+        this.device = device;
+        this.desc = desc;
+        this.externalIp = externalIp;
+        this.network = network;
+    }
 }

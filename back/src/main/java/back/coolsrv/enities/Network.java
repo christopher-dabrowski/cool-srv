@@ -33,4 +33,15 @@ public class Network {
     private boolean publicNet;
 
     private boolean dynamic;
+
+    public Network(String address, String mask, String desc, String dns, String location, boolean routable, boolean publicNet, boolean dynamic) {
+        this.address = address;
+        this.mask = mask;
+        this.desc = desc;
+        this.dns = dns;
+        this.location = location;
+        this.routable = routable;
+        this.publicNet = publicNet;
+        this.dynamic = dynamic;
+    }
 }
