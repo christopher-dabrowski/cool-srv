@@ -5,10 +5,12 @@ import { connect } from "react-redux";
 import { fetchDevices } from "./actions";
 import { CircleLoader as Loader } from "react-spinners";
 import CreateDevice from "./CreateDevice";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faEdit, faTrash } from "@fortawesome/free-solid-svg-icons";
 
-import { openCreateDevicekModal } from "./actions";
+import { openCreateDevicekModal, deleteDevice } from "./actions";
 
-const Devices = ({ devices, loading, refreshDevices, createModal, openCreateView }) => {
+const Devices = ({ devices, loading, refreshDevices, createModal, openCreateView, deleteDevice }) => {
   useEffect(() => { refreshDevices(); }, []);
 
   return (
@@ -28,8 +30,17 @@ const Devices = ({ devices, loading, refreshDevices, createModal, openCreateView
         :
         <ListGroup>
           {devices.map((d, i) =>
-            <ListGroupItem key={i}>
-              {d.hostname}
+            <ListGroupItem key={i} className="d-flex align-items-baseline">
+              <b className="flex-grow-1">
+                {d.hostname}
+              </b>
+
+              <section>
+                <Button color="danger" onClick={() => deleteDevice(d["_links"].self.href)}>
+                  <FontAwesomeIcon icon={faTrash} className="mr-2" />
+                  Delete
+                </Button>
+              </section>
             </ListGroupItem>)}
         </ListGroup>
       }
@@ -47,7 +58,8 @@ Devices.propTypes = {
   loading: PropTypes.bool.isRequired,
   refreshDevices: PropTypes.func.isRequired,
   createModal: PropTypes.bool.isRequired,
-  openCreateView: PropTypes.func.isRequired
+  openCreateView: PropTypes.func.isRequired,
+  deleteDevice: PropTypes.func.isRequired
 };
 
 const mapStateToProps = (state) => (
@@ -62,6 +74,7 @@ const mapDispatchToProps = (dispatch) => (
   {
     refreshDevices: () => dispatch(fetchDevices()),
     openCreateView: () => dispatch(openCreateDevicekModal()),
+    deleteDevice: (url) => dispatch(deleteDevice(url))
   }
 );
 

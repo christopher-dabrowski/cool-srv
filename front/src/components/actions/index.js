@@ -15,7 +15,6 @@ export const OPEN_CREATE_DEVICE_MODAL = "OPEN_CREATE_DEVICE_MODAL";
 export const CLOSE_CREATE_DEVICE_MODAL = "CLOSE_CREATE_DEVICE_MODAL";
 export const CREATE_NEW_DEVICE = "CREATE_NEW_DEVICE";
 
-
 export const SHOW_MESSAGE = "SHOW_MESSAGE";
 export const DELETE_MESSAGE = "DELETE_MESSAGE";
 
@@ -72,6 +71,20 @@ export const createNewDevice = (device) => async (dispatch, getState, api) => {
     dispatch(showMessage("Unable to create device", "danger"));
   }
 
+};
+
+export const deleteDevice = (resourceURL) => async (dispatch) => {
+  try {
+    const response = await fetch(resourceURL, { method: "DELETE" });
+    if (!response.ok) {
+      throw new Error();
+    }
+
+    dispatch(fetchDevices());
+  }
+  catch (error) {
+    dispatch(showMessage("Can't delete this device!", "danger"));
+  }
 };
 
 export const openCreateDevicekModal = () => {

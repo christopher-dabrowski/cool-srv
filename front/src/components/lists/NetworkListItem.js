@@ -19,10 +19,10 @@ const NetworkListItem = ({ network, deleteNetwork }) => {
       </b>
 
       <section>
-        <Button color="info">
+        {/* <Button color="info">
           <FontAwesomeIcon icon={faEdit} className="mr-2" />
           Edit
-        </Button>
+        </Button> */}
         <Button color="danger" onClick={() => deleteNetwork(selfLink)}>
           <FontAwesomeIcon icon={faTrash} className="mr-2" />
           Delete
