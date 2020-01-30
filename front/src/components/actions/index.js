@@ -1,6 +1,7 @@
 // Actions
 export const FETCH_NETWORKS = "FETCH_NETWORKS";
 export const LOAD_NETWORKS = "LOAD_NETWORKS";
+export const DELETE_NETWORK = "DELETE_NETWORK";
 
 export const loadNetworks = (networks) => {
   return {
@@ -26,7 +27,21 @@ export const fetchNetworks = () => async (dispatch, getState, api) => {
     dispatch(loadNetworks(data["_embedded"].network));
   }
   catch (error) {
-    alert("Unable to connect to db");
+    alert("Unable to connect to database");
   }
 
+};
+
+export const deleteNetwork = (resourceURL) => async (dispatch) => {
+  try {
+    const response = await fetch(resourceURL, { method: "DELETE" });
+    if (!response.ok) {
+      throw new Error();
+    }
+
+    dispatch(fetchNetworks);
+  }
+  catch (error) {
+    alert("Can't delete this network. Remove connected devices first");
+  }
 };
