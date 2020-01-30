@@ -19,11 +19,10 @@ export const fetchNetworks = () => async (dispatch, getState, api) => {
     }
 
     const data = await response.json();
-    console.log(data);
-    dispatch(loadNetworks(data));
+    dispatch(loadNetworks(data["_embedded"].network));
   }
   catch (error) {
-    // alert("Unable to connect to db");
+    alert("Unable to connect to db");
   }
 
 };
