@@ -12,36 +12,24 @@ const NATModal = ({ match }) => {
 			<ModalBody>
 				<Form>
 					<FormGroup>
-						<Label>Adres IP</Label>
-						<Input type="text" placeholder="Podaj adres IP" />
+						<Label>Nazwa sieci</Label>
+						<Input type="text" placeholder="Podaj nazwę sieci" />
 					</FormGroup>
 					<FormGroup>
-						<Label>Maska podsieci</Label>
-						<Input type="text" placeholder="Podaj maskę podsieci" />
+						<Label>Urządzenie</Label>
+						<Input type="text" placeholder="Wybierz urządzenie" />
 					</FormGroup>
 					<FormGroup>
 						<Label>Opis</Label>
 						<Input type="text" placeholder="Podaj opis" />
 					</FormGroup>
 					<FormGroup>
-						<Label>Adres DNS</Label>
-						<Input type="text" placeholder="Podaj adres DNS" />
+						<Label>Adres zewnętrzny</Label>
+						<Input type="text" placeholder="Podaj adres zewnętrzny" />
 					</FormGroup>
 					<FormGroup>
-						<Label>Lokalizacja fizyczna</Label>
-						<Input type="text" placeholder="Podaj lokalizację fizyczną" />
-					</FormGroup>
-					<FormGroup>
-						<Label>Rutowalne?</Label>
-						<Input type="text" placeholder="Routable?" />
-					</FormGroup>
-					<FormGroup>
-						<Label>Publiczne?</Label>
-						<Input type="text" placeholder="Public?" />
-					</FormGroup>
-					<FormGroup>
-						<Label>Adres dynamiczny?</Label>
-						<Input type="text" placeholder="Dynamic?" />
+						<Label>Sieć</Label>
+						<Input type="text" placeholder="Wybierz sieć" />
 					</FormGroup>
 				</Form>
 			</ModalBody>

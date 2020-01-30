@@ -12,8 +12,8 @@ const VLANModal = ({ match }) => {
 			<ModalBody>
 				<Form>
 					<FormGroup>
-						<Label>Adres IP</Label>
-						<Input type="text" placeholder="Podaj adres IP" />
+						<Label>Nazwa sieci</Label>
+						<Input type="text" placeholder="Podaj nazwę sieci" />
 					</FormGroup>
 					<FormGroup>
 						<Label>Maska podsieci</Label>
@@ -22,26 +22,6 @@ const VLANModal = ({ match }) => {
 					<FormGroup>
 						<Label>Opis</Label>
 						<Input type="text" placeholder="Podaj opis" />
-					</FormGroup>
-					<FormGroup>
-						<Label>Adres DNS</Label>
-						<Input type="text" placeholder="Podaj adres DNS" />
-					</FormGroup>
-					<FormGroup>
-						<Label>Lokalizacja fizyczna</Label>
-						<Input type="text" placeholder="Podaj lokalizację fizyczną" />
-					</FormGroup>
-					<FormGroup>
-						<Label>Rutowalne?</Label>
-						<Input type="text" placeholder="Routable?" />
-					</FormGroup>
-					<FormGroup>
-						<Label>Publiczne?</Label>
-						<Input type="text" placeholder="Public?" />
-					</FormGroup>
-					<FormGroup>
-						<Label>Adres dynamiczny?</Label>
-						<Input type="text" placeholder="Dynamic?" />
 					</FormGroup>
 				</Form>
 			</ModalBody>

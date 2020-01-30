@@ -16,8 +16,8 @@ const DevicesModal = ({ match }) => {
 						<Input type="text" placeholder="Podaj adres IP" />
 					</FormGroup>
 					<FormGroup>
-						<Label>Maska podsieci</Label>
-						<Input type="text" placeholder="Podaj maskę podsieci" />
+						<Label>Nazwa hosta</Label>
+						<Input type="text" placeholder="Podaj nazwę hosta" />
 					</FormGroup>
 					<FormGroup>
 						<Label>Opis</Label>
@@ -28,20 +28,16 @@ const DevicesModal = ({ match }) => {
 						<Input type="text" placeholder="Podaj adres DNS" />
 					</FormGroup>
 					<FormGroup>
+						<Label>Gateway</Label>
+						<Input type="text" placeholder="Gateway" />
+					</FormGroup>
+					<FormGroup>
 						<Label>Lokalizacja fizyczna</Label>
 						<Input type="text" placeholder="Podaj lokalizację fizyczną" />
 					</FormGroup>
 					<FormGroup>
-						<Label>Rutowalne?</Label>
-						<Input type="text" placeholder="Routable?" />
-					</FormGroup>
-					<FormGroup>
-						<Label>Publiczne?</Label>
-						<Input type="text" placeholder="Public?" />
-					</FormGroup>
-					<FormGroup>
-						<Label>Adres dynamiczny?</Label>
-						<Input type="text" placeholder="Dynamic?" />
+						<Label>Vlan</Label>
+						<Input type="text" placeholder="Wybierz VLAN" />
 					</FormGroup>
 				</Form>
 			</ModalBody>
