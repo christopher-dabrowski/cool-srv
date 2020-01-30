@@ -57,14 +57,22 @@ export const deleteMessage = (id) => {
   };
 };
 
-let id = 0;
+let idGenerator = 0;
 export const showMessage = (message, category = "primary") => (dispatch, getState) => {
+  const id = idGenerator++;
   dispatch({
     type: SHOW_MESSAGE,
     message: message,
     category: category,
-    id: id++
+    id: id
   });
 
-  // TODO: Delete after time
+  const FADE_TIME = 2000;
+  setTimeout(() => {
+    const ids = new Set(getState().messages.messages.map((m) => m.id));
+
+    if (ids.has(id)) {
+      dispatch(deleteMessage(id));
+    }
+  }, FADE_TIME);
 };
