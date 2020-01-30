@@ -2,7 +2,7 @@ import {
   LOAD_NETWORKS,
   FETCH_NETWORKS,
   OPEN_CREATE_NETWORK_MODAL,
-  CANCEL_CREATE_NETWORK_MODAL
+  CLOSE_CREATE_NETWORK_MODAL
 } from "../actions";
 
 const initialState = {
@@ -31,7 +31,7 @@ const networksReducer = (state = initialState, action) => {
         createModal: true
       };
 
-    case CANCEL_CREATE_NETWORK_MODAL:
+    case CLOSE_CREATE_NETWORK_MODAL:
       return {
         ...state,
         createModal: false

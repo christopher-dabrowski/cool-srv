@@ -6,14 +6,19 @@ import {
   Form, Label, FormGroup, Input
 } from "reactstrap";
 
-import { cancelCreateNetworkModal } from "../actions";
+import { closeCreateNetworkModal, createNewNetwork } from "../actions";
 
-const CreateNetwork = ({ cancel }) => {
+const CreateNetwork = ({ close, createNewNetwork }) => {
   const [ip, setIp] = useState("");
   const [mask, setMask] = useState("");
   const [desc, setDesc] = useState("");
   const [dns, setDns] = useState("");
   const [location, setLocation] = useState("");
+
+  const handleCreate = () => {
+    createNewNetwork({ address: ip, mask, desc, dns, location });
+    close();
+  };
 
   return (
     <Modal isOpen={true}>
@@ -44,20 +49,22 @@ const CreateNetwork = ({ cancel }) => {
       </ModalBody>
 
       <ModalFooter>
-        <Button className="mr-2" color="success">Create</Button>
-        <Button onClick={() => cancel()} color="warning">Cancel</Button>
+        <Button onClick={handleCreate} className="mr-2" color="success">Create</Button>
+        <Button onClick={() => close()} color="warning">Cancel</Button>
       </ModalFooter>
     </Modal>
   );
 };
 
 CreateNetwork.propTypes = {
-  cancel: PropTypes.func.isRequired
+  close: PropTypes.func.isRequired,
+  createNewNetwork: PropTypes.func.isRequired
 };
 
 const mapDispatchToProps = (dispatch) => (
   {
-    cancel: () => dispatch(cancelCreateNetworkModal())
+    close: () => dispatch(closeCreateNetworkModal()),
+    createNewNetwork: (network) => dispatch(createNewNetwork(network))
   }
 );
 

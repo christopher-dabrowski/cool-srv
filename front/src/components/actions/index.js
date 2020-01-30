@@ -4,7 +4,8 @@ export const LOAD_NETWORKS = "LOAD_NETWORKS";
 export const DELETE_NETWORK = "DELETE_NETWORK";
 
 export const OPEN_CREATE_NETWORK_MODAL = "OPEN_CREATE_NETWORK_MODAL";
-export const CANCEL_CREATE_NETWORK_MODAL = "CANCEL_CREATE_NETWORK_MODAL";
+export const CLOSE_CREATE_NETWORK_MODAL = "CLOSE_CREATE_NETWORK_MODAL";
+export const CREATE_NEW_NETWORK = "CREATE_NEW_NETWORK";
 
 
 export const SHOW_MESSAGE = "SHOW_MESSAGE";
@@ -55,15 +56,38 @@ export const deleteNetwork = (resourceURL) => async (dispatch) => {
   }
 };
 
+export const createNewNetwork = (network) => async (dispatch, getState, api) => {
+  const url = `${api}/network`;
+
+  try {
+    const response = await fetch(url, {
+      method: "POST",
+      body: JSON.stringify(network),
+      headers: {
+        "Content-Type": "application/json"
+      }
+    });
+
+    if (!response.ok) {
+      throw new Error();
+    }
+
+    dispatch(fetchNetworks());
+  } catch (error) {
+    dispatch(showMessage("Unable to create network", "danger"));
+  }
+
+};
+
 export const openCreateNetworkModal = () => {
   return {
     type: OPEN_CREATE_NETWORK_MODAL
   };
 };
 
-export const cancelCreateNetworkModal = () => {
+export const closeCreateNetworkModal = () => {
   return {
-    type: CANCEL_CREATE_NETWORK_MODAL
+    type: CLOSE_CREATE_NETWORK_MODAL
   };
 };
 
