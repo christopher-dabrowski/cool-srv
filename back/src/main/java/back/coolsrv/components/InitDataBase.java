@@ -5,12 +5,12 @@ import back.coolsrv.repositories.NATRepository;
 import back.coolsrv.repositories.NetworkRepository;
 import back.coolsrv.repositories.VlanRepository;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.boot.ApplicationArguments;
-import org.springframework.boot.ApplicationRunner;
+import org.springframework.boot.context.event.ApplicationReadyEvent;
+import org.springframework.context.event.EventListener;
 import org.springframework.stereotype.Component;
 
 @Component
-public class InitDataBase implements ApplicationRunner {
+public class InitDataBase {
     @Autowired
     DeviceRepository deviceRepository;
 
@@ -23,7 +23,15 @@ public class InitDataBase implements ApplicationRunner {
     @Autowired
     VlanRepository vlanRepository;
 
-    @Override
-    public void run(ApplicationArguments args) throws Exception {
+    @EventListener(ApplicationReadyEvent.class)
+    public void run() throws Exception {
+//        Vlan vlan = new Vlan("vlan", new ArrayList<>(), "desc");
+//        Device device = new Device("123.45.67.89", "hostname", "opis", "11:11:11:11:11:11", true, "tam", vlan);
+//        Network network = new Network("12.34.5.6", "24", "opis", "11.0.0.0", "tutaj", true, false, true);
+//        NAT nat = new NAT("nazwa", device, "opis", "123.55.55.0", network);
+//        deviceRepository.save(device);
+//        natRepository.save(nat);
+//        networkRepository.save(network);
+//        vlanRepository.save(vlan);
     }
 }
