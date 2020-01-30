@@ -30,13 +30,12 @@ public class Device {
     @ManyToOne
     private Vlan vlan;
 
-    public Device(String IP, String hostname, String desc, String MAC, boolean gateway, String location, Vlan vlan) {
+    public Device(String IP, String hostname, String desc, String MAC, boolean gateway, String location) {
         this.IP = IP;
         this.hostname = hostname;
         this.desc = desc;
         this.MAC = MAC;
         this.gateway = gateway;
         this.location = location;
-        this.vlan = vlan;
     }
 }
