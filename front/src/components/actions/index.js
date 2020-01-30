@@ -52,7 +52,6 @@ export const deleteNetwork = (resourceURL) => async (dispatch) => {
   }
   catch (error) {
     dispatch(showMessage("Can't delete this network. Remove connected devices first", "danger"));
-    // alert("Can't delete this network. Remove connected devices first");
   }
 };
 
@@ -72,6 +71,7 @@ export const createNewNetwork = (network) => async (dispatch, getState, api) => 
       throw new Error();
     }
 
+    dispatch(showMessage("Network created", "success"));
     dispatch(fetchNetworks());
   } catch (error) {
     dispatch(showMessage("Unable to create network", "danger"));
@@ -108,7 +108,7 @@ export const showMessage = (message, category = "primary") => (dispatch, getStat
     id: id
   });
 
-  const FADE_TIME = 2000;
+  const FADE_TIME = 3500;
   setTimeout(() => {
     const ids = new Set(getState().messages.messages.map((m) => m.id));
 
