@@ -2,6 +2,8 @@
 export const FETCH_NETWORKS = "FETCH_NETWORKS";
 export const LOAD_NETWORKS = "LOAD_NETWORKS";
 export const DELETE_NETWORK = "DELETE_NETWORK";
+export const SHOW_MESSAGE = "SHOW_MESSAGE";
+export const DELETE_MESSAGE = "DELETE_MESSAGE";
 
 export const loadNetworks = (networks) => {
   return {
@@ -44,4 +46,23 @@ export const deleteNetwork = (resourceURL) => async (dispatch) => {
   catch (error) {
     alert("Can't delete this network. Remove connected devices first");
   }
+};
+
+export const deleteMessage = (id) => {
+  return {
+    type: DELETE_MESSAGE,
+    id: id
+  };
+};
+
+let id = 0;
+export const showMessage = (message, category = "primary") => (dispatch, getState) => {
+  dispatch({
+    type: SHOW_MESSAGE,
+    message: message,
+    category: category,
+    id: id++
+  });
+
+  // TODO: Delete after time
 };
