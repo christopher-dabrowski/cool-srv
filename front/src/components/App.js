@@ -4,6 +4,7 @@ import { BrowserRouter as Router, Switch, Route, Redirect } from "react-router-d
 import Header from "./Layout/Header";
 import NavigationDrawer from "./Layout/NavigationDrawer";
 import Networks from "./Networks";
+import MessagesDisplay from "./MessagesDisplay";
 
 function App() {
   return (
@@ -15,6 +16,8 @@ function App() {
           <NavigationDrawer />
 
           <main className="flex-grow-1 container">
+            <MessagesDisplay />
+
             <Switch>
               <Route exact path="/">
                 <Redirect to="/networks" />

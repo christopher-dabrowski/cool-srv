@@ -29,7 +29,8 @@ export const fetchNetworks = () => async (dispatch, getState, api) => {
     dispatch(loadNetworks(data["_embedded"].network));
   }
   catch (error) {
-    alert("Unable to connect to database");
+    dispatch(showMessage("Unable to connect to database", "danger"));
+    // alert("Unable to connect to database");
   }
 
 };
@@ -44,7 +45,8 @@ export const deleteNetwork = (resourceURL) => async (dispatch) => {
     dispatch(fetchNetworks);
   }
   catch (error) {
-    alert("Can't delete this network. Remove connected devices first");
+    dispatch(showMessage("Can't delete this network. Remove connected devices first", "danger"));
+    // alert("Can't delete this network. Remove connected devices first");
   }
 };
 
