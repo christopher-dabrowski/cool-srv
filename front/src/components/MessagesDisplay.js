@@ -2,8 +2,9 @@ import React from "react";
 import PropTypes from "prop-types";
 import { Alert, Button } from "reactstrap";
 import { connect } from "react-redux";
+import { deleteMessage } from "./actions";
 
-const MessagesDisplay = ({ messages }) => {
+const MessagesDisplay = ({ messages, dismissMessage }) => {
 
   return (
     <section>
@@ -11,7 +12,7 @@ const MessagesDisplay = ({ messages }) => {
 
         return <Alert className="mt-2" key={m.id} color={m.category}>
           {m.message}
-          <Button type="button" className="close" data-dismiss="alert" aria-label="Close">
+          <Button onClick={() => dismissMessage(m.id)} type="button" className="close" data-dismiss="alert" aria-label="Close">
             <span aria-hidden="true">&times;</span>
           </Button>
         </Alert>;
@@ -21,7 +22,8 @@ const MessagesDisplay = ({ messages }) => {
 };
 
 MessagesDisplay.propTypes = {
-  messages: PropTypes.array
+  messages: PropTypes.array.isRequired,
+  dismissMessage: PropTypes.func.isRequired
 };
 
 const mapStateToProps = (state) => (
@@ -30,4 +32,10 @@ const mapStateToProps = (state) => (
   }
 );
 
-export default connect(mapStateToProps)(MessagesDisplay);
+const mapDispatchToProps = (dispatch) => (
+  {
+    dismissMessage: (id) => dispatch(deleteMessage(id))
+  }
+);
+
+export default connect(mapStateToProps, mapDispatchToProps)(MessagesDisplay);

@@ -18,10 +18,13 @@ const messagesReducer = (state = initialState, action) => {
       };
 
     case DELETE_MESSAGE:
+      console.log(action);
+      console.log(state.messages);
+      console.log(state.messages.filter((m) => m.id !== action.id));
       return {
         ...state,
-        message: state.messages.filter((m) => m.id !== action.id)
-      }
+        messages: state.messages.filter((m) => m.id !== action.id)
+      };
 
     default:
       return state;
