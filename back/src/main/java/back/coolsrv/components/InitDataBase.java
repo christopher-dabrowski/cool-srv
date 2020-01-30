@@ -33,6 +33,7 @@ public class InitDataBase {
     public void run() throws Exception {
         Network network = new Network("12.12.12.12", "32", "opis", "dns<3", null, false, true, false);
         networkRepository.save(network);
+        networkRepository.save(new Network("203.120.0.0", "16", "opis", "dab", null, false, true, false));
 
         Vlan vlan = new Vlan("vlan", new ArrayList<>(), "desc");
         Device device = new Device("123.45.67.89", "hostname", "opis", "11:11:11:11:11:11", true, "tam");

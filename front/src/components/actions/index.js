@@ -48,7 +48,7 @@ export const deleteNetwork = (resourceURL) => async (dispatch) => {
       throw new Error();
     }
 
-    dispatch(fetchNetworks);
+    dispatch(fetchNetworks());
   }
   catch (error) {
     dispatch(showMessage("Can't delete this network. Remove connected devices first", "danger"));
