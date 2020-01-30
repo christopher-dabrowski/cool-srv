@@ -11,18 +11,20 @@ function App() {
       <Router>
         <Header />
 
-        <main className="d-flex">
+        <div className="d-flex">
           <NavigationDrawer />
 
-          <Switch>
-            <Route exact path="/">
-              <Redirect to="/networks" />
-            </Route>
-            <Route path="/networks">
-              <Networks className="flex-grow-1" />
-            </Route>
-          </Switch>
-        </main>
+          <main className="flex-grow-1">
+            <Switch>
+              <Route exact path="/">
+                <Redirect to="/networks" />
+              </Route>
+              <Route path="/networks">
+                <Networks />
+              </Route>
+            </Switch>
+          </main>
+        </div>
 
       </Router>
       Nice servers and happy admins.
