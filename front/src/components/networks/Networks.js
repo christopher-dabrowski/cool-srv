@@ -1,19 +1,24 @@
 import React, { useEffect } from "react";
 import { Button, ListGroup } from "reactstrap";
 import { connect } from "react-redux";
-import NetworkListItem from "./lists/NetworkListItem";
+import NetworkListItem from "../lists/NetworkListItem";
 import { CircleLoader as Loader } from "react-spinners";
 import PropTypes from "prop-types";
 
-import { fetchNetworks } from "./actions";
+import { fetchNetworks, openCreateNetworkModal } from "../actions";
+import CreateNetwork from "./CreateNetwork";
 
-const Networks = ({ className, networks, loading, refreshNetworks }) => {
+const Networks = ({ className, networks, loading, refreshNetworks,
+  openCreateView, createModal }) => {
   useEffect(() => { refreshNetworks(); }, []);
 
   return (
     <div className={className}>
       <h2 className="text-center">Networks</h2>
-      {/* <Button color="primary" onClick={refreshNetworks}>Refresh</Button> */}
+
+      {createModal &&
+        <CreateNetwork />
+      }
 
       {loading ?
         <Loader
@@ -28,7 +33,7 @@ const Networks = ({ className, networks, loading, refreshNetworks }) => {
       }
 
       <div className="mt-4">
-        <Button color="success">Create</Button>
+        <Button onClick={() => openCreateView()} color="success">Create</Button>
       </div>
 
     </div>
@@ -40,19 +45,23 @@ Networks.propTypes = {
   className: PropTypes.string,
   networks: PropTypes.array.isRequired,
   loading: PropTypes.bool.isRequired,
-  refreshNetworks: PropTypes.func.isRequired
+  refreshNetworks: PropTypes.func.isRequired,
+  openCreateView: PropTypes.func.isRequired,
+  createModal: PropTypes.bool.isRequired
 };
 
 const mapStateToProps = (state) => (
   {
     networks: state.networks.networks,
-    loading: state.networks.loading
+    loading: state.networks.loading,
+    createModal: state.networks.createModal
   }
 );
 
 const mapDispatchToProps = (dispatch) => (
   {
-    refreshNetworks: () => dispatch(fetchNetworks())
+    refreshNetworks: () => dispatch(fetchNetworks()),
+    openCreateView: () => dispatch(openCreateNetworkModal())
   }
 );
 

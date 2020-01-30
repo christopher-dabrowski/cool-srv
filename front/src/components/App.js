@@ -3,7 +3,7 @@ import "../styles/App.css";
 import { BrowserRouter as Router, Switch, Route, Redirect } from "react-router-dom";
 import Header from "./Layout/Header";
 import NavigationDrawer from "./Layout/NavigationDrawer";
-import Networks from "./Networks";
+import Networks from "./networks/Networks";
 import MessagesDisplay from "./MessagesDisplay";
 import Footer from "./Layout/Footer";
 

@@ -2,6 +2,11 @@
 export const FETCH_NETWORKS = "FETCH_NETWORKS";
 export const LOAD_NETWORKS = "LOAD_NETWORKS";
 export const DELETE_NETWORK = "DELETE_NETWORK";
+
+export const OPEN_CREATE_NETWORK_MODAL = "OPEN_CREATE_NETWORK_MODAL";
+export const CANCEL_CREATE_NETWORK_MODAL = "CANCEL_CREATE_NETWORK_MODAL";
+
+
 export const SHOW_MESSAGE = "SHOW_MESSAGE";
 export const DELETE_MESSAGE = "DELETE_MESSAGE";
 
@@ -48,6 +53,18 @@ export const deleteNetwork = (resourceURL) => async (dispatch) => {
     dispatch(showMessage("Can't delete this network. Remove connected devices first", "danger"));
     // alert("Can't delete this network. Remove connected devices first");
   }
+};
+
+export const openCreateNetworkModal = () => {
+  return {
+    type: OPEN_CREATE_NETWORK_MODAL
+  };
+};
+
+export const cancelCreateNetworkModal = () => {
+  return {
+    type: CANCEL_CREATE_NETWORK_MODAL
+  };
 };
 
 export const deleteMessage = (id) => {
