@@ -36,10 +36,12 @@ public class InitDataBase {
         networkRepository.save(new Network("203.120.0.0", "16", "opis", "dab", null, false, true, false));
 
         Vlan vlan = new Vlan("vlan", new ArrayList<>(), "desc");
-        Device device = new Device("123.45.67.89", "hostname", "opis", "11:11:11:11:11:11", true, "tam");
+        Device device = new Device("123.45.67.89", "Device1", "opis", "11:11:11:11:11:11", true, "tam");
         NAT nat = new NAT("nazwa", device, "opis", "123.55.55.0", network);
         deviceRepository.save(device);
         natRepository.save(nat);
         vlanRepository.save(vlan);
+
+        deviceRepository.save(new Device("123.45.67.89", "Big server", "opis", "11:11:11:11:11:11", true, "tam"));
     }
 }

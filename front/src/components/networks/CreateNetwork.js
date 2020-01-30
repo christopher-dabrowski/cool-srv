@@ -22,7 +22,7 @@ const CreateNetwork = ({ close, createNewNetwork }) => {
 
   return (
     <Modal isOpen={true}>
-      <ModalHeader>Create netwokr</ModalHeader>
+      <ModalHeader>Create network</ModalHeader>
       <ModalBody>
         <Form onSubmit={(e) => { e.preventDefault(); handleCreate(); }}>
           <FormGroup>
