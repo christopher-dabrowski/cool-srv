@@ -11,6 +11,10 @@ export const loadNetworks = (networks) => {
 
 // Action creators
 export const fetchNetworks = () => async (dispatch, getState, api) => {
+  dispatch({
+    type: FETCH_NETWORKS
+  });
+
   try {
     const url = `${api}/network`;
     const response = await fetch(url);

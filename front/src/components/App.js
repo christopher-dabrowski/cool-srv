@@ -14,7 +14,7 @@ function App() {
         <div className="d-flex">
           <NavigationDrawer />
 
-          <main className="flex-grow-1">
+          <main className="flex-grow-1 container">
             <Switch>
               <Route exact path="/">
                 <Redirect to="/networks" />
