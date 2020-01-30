@@ -24,14 +24,14 @@ const CreateNetwork = ({ close, createNewNetwork }) => {
     <Modal isOpen={true}>
       <ModalHeader>Create netwokr</ModalHeader>
       <ModalBody>
-        <Form>
+        <Form onSubmit={(e) => { e.preventDefault(); handleCreate(); }}>
           <FormGroup>
             <Label>Adress ip</Label>
-            <Input type="text" value={ip} onChange={(e) => setIp(e.target.value)} />
+            <Input type="text" value={ip} onChange={(e) => setIp(e.target.value)} required pattern="^(\d{1,3}\.){3}\d{1,3}$" />
           </FormGroup>
           <FormGroup>
             <Label>Mask</Label>
-            <Input type="text" value={mask} onChange={(e) => setMask(e.target.value)} />
+            <Input type="text" value={mask} onChange={(e) => setMask(e.target.value)} required pattern="(^\/\d{1,2}$)|(^\d{1,2}$)|(^(\d{1,3}\.){3}\d{1,3}$)|(^([01]{8}\.){3}[01]{8}$)" />
           </FormGroup>
           <FormGroup>
             <Label>Descritption</Label>
@@ -45,12 +45,15 @@ const CreateNetwork = ({ close, createNewNetwork }) => {
             <Label>Location</Label>
             <Input type="text" value={location} onChange={(e) => setLocation(e.target.value)} />
           </FormGroup>
+
+          <Button type="submit" className="mr-2" color="success">Create</Button>
+          <Button onClick={() => close()} color="warning">Cancel</Button>
         </Form>
       </ModalBody>
 
       <ModalFooter>
-        <Button onClick={handleCreate} className="mr-2" color="success">Create</Button>
-        <Button onClick={() => close()} color="warning">Cancel</Button>
+        {/* <Button onClick={handleCreate} className="mr-2" color="success">Create</Button>
+        <Button onClick={() => close()} color="warning">Cancel</Button> */}
       </ModalFooter>
     </Modal>
   );
