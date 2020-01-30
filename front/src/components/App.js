@@ -5,6 +5,7 @@ import Header from "./Layout/Header";
 import NavigationDrawer from "./Layout/NavigationDrawer";
 import Networks from "./Networks";
 import MessagesDisplay from "./MessagesDisplay";
+import Footer from "./Layout/Footer";
 
 function App() {
   return (
@@ -30,7 +31,8 @@ function App() {
         </div>
 
       </Router>
-      Nice servers and happy admins.
+
+      <Footer />
     </div>
   );
 }

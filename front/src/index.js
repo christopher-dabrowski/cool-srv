@@ -27,7 +27,7 @@ const store = createStore(rootReducer, enchncers);
 
 console.log(process.env.NODE_ENV);
 console.log(process.env.DEBUG);
-console.log(process.env.DEBUG == "true");
+console.log(process.env.DEBUG === "true");
 
 
 ReactDOM.render(
