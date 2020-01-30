@@ -13,7 +13,7 @@ const Networks = ({ className, networks, loading, refreshNetworks }) => {
   return (
     <div className={className}>
       <h2 className="text-center">Networks</h2>
-      <Button color="primary" onClick={refreshNetworks}>Refresh</Button>
+      {/* <Button color="primary" onClick={refreshNetworks}>Refresh</Button> */}
 
       {loading ?
         <Loader
@@ -26,6 +26,10 @@ const Networks = ({ className, networks, loading, refreshNetworks }) => {
           {networks.map((n, i) => <NetworkListItem network={n} key={i} />)}
         </ListGroup>
       }
+
+      <div className="mt-4">
+        <Button color="success">Create</Button>
+      </div>
 
     </div>
   );
