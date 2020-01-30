@@ -16,7 +16,9 @@ import "./assets/vendor/nucleo/css/nucleo.css";
 import "./assets/vendor/font-awesome/css/font-awesome.min.css";
 import "./assets/scss/argon-design-system-react.scss";
 
-const middleware = [thunk];
+const api = "http://localhost:8080";
+
+const middleware = [thunk.withExtraArgument(api)];
 
 const enchncers = process.env.NODE_ENV === "production" ?
   applyMiddleware(...middleware) : composeWithDevTools(applyMiddleware(...middleware));
