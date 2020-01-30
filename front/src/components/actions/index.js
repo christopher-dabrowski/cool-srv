@@ -23,7 +23,7 @@ export const fetchNetworks = () => async (dispatch, getState, api) => {
     dispatch(loadNetworks(data));
   }
   catch (error) {
-    alert("Unable to connect to db");
+    // alert("Unable to connect to db");
   }
 
 };
