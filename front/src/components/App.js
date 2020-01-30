@@ -4,6 +4,9 @@ import { BrowserRouter as Router, Switch, Route, Redirect } from "react-router-d
 import Header from "./Layout/Header";
 import NavigationDrawer from "./Layout/NavigationDrawer";
 import Networks from "./networks/Networks";
+import Devices from "./Devices";
+import Nat from "./Nat";
+import Vlan from "./Vlan";
 import MessagesDisplay from "./MessagesDisplay";
 import Footer from "./Layout/Footer";
 
@@ -25,6 +28,15 @@ function App() {
               </Route>
               <Route path="/networks">
                 <Networks />
+              </Route>
+              <Route path="/devices">
+                <Devices />
+              </Route>
+              <Route path="/nat">
+                <Nat />
+              </Route>
+              <Route path="/vlan">
+                <Vlan />
               </Route>
             </Switch>
           </main>
