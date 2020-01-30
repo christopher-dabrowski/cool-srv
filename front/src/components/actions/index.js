@@ -50,13 +50,37 @@ export const fetchDevices = () => async (dispatch, getState, api) => {
 
 };
 
+export const createNewDevice = (device) => async (dispatch, getState, api) => {
+  const url = `${api}/device`;
+
+  try {
+    const response = await fetch(url, {
+      method: "POST",
+      body: JSON.stringify(device),
+      headers: {
+        "Content-Type": "application/json"
+      }
+    });
+
+    if (!response.ok) {
+      throw new Error();
+    }
+
+    dispatch(showMessage("Device created", "success"));
+    dispatch(fetchDevices());
+  } catch (error) {
+    dispatch(showMessage("Unable to create device", "danger"));
+  }
+
+};
+
 export const openCreateDevicekModal = () => {
   return {
     type: OPEN_CREATE_DEVICE_MODAL
   };
 };
 
-export const closeCreateDevicekModal = () => {
+export const closeCreateDeviceModal = () => {
   return {
     type: CLOSE_CREATE_DEVICE_MODAL
   };

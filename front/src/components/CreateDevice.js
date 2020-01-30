@@ -6,7 +6,7 @@ import {
   Form, Label, FormGroup, Input
 } from "reactstrap";
 
-import { closeCreateDevicekModal } from "./actions";
+import { closeCreateDeviceModal, createNewDevice } from "./actions";
 
 const CreateDevice = ({ close, create }) => {
   const [hostname, setHostname] = useState("");
@@ -68,8 +68,8 @@ CreateDevice.propTypes = {
 
 const mapDispatchToProps = (dispatch) => (
   {
-    close: () => dispatch(closeCreateDevicekModal()),
-    // create: (network) => dispatch(createNewNetwork(network))
+    close: () => dispatch(closeCreateDeviceModal()),
+    create: (device) => dispatch(createNewDevice(device))
   }
 );
 
